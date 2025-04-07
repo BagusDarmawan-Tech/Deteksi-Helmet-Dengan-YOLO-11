@@ -1,41 +1,67 @@
-# 🪖 Helmet Detection with YOLOv11
+# 🪖 Deteksi Helm dengan YOLOv11
 
-Proyek ini bertujuan untuk mendeteksi penggunaan helm pada manusia menggunakan model YOLOv11. Sistem ini dapat digunakan untuk keperluan keamanan dan monitoring.
-## 🚀 Training Colabs
+Proyek ini mendeteksi penggunaan helm pada manusia menggunakan YOLOv11, cocok untuk keamanan dan pemantauan.
+
+##  Training Colabs
+
 [Training Colabs](https://colab.research.google.com/drive/17VnnHTPFaXMK2Mye3U3wQtf71Qn3QK6C?usp=sharing)
 
----
+##  Fitur
 
-## 📦 Fitur
-- Deteksi dua kelas: `Helmet` dan `Without Helmet`
-- Menggunakan YOLOv11 (versi modifikasi)
-- Real-time inference dari kamera atau video
-- Visualisasi bounding box dan confidence score
-
----
-### 1. Clone Repository
-```bash
-git clone https://github.com/BagusDarmawan-Tech/Deteksi-Helmet-Dengan-YOLO-11.git
-cd Deteksi-Helmet-Dengan-YOLO-11
+* Deteksi: `Helmet`, `Without Helmet`
+* YOLOv11 (modifikasi)
+* Deteksi langsung dari kamera, video, gambar
+* Visualisasi kotak batas & keyakinan
 
 ## ⚙️ Instalasi
-### 🐍 Requirement
-[Install Anaconda](https://repo.anaconda.com/archive/Anaconda3-2024.10-1-Windows-x86_64.exe)
 
-Masuk ke Anaconda Prompt dan jalankan:
-```bash
-### 1. Install Yolo
-conda create --name yolo-env1 python=3.12
-conda activate yolo-env1
-### 2.Install pytorch
-cd /PATH/direktori/my_model
-pip3 install --upgrade torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+1.  **Clone Repository:**
 
-### 3.Run
-python yolo_detect.py --model my_model.pt --source usb0 --resolution 1280x720
+    ```bash
+    git clone [https://github.com/BagusDarmawan-Tech/Deteksi-Helmet-Dengan-YOLO-11.git](https://github.com/BagusDarmawan-Tech/Deteksi-Helmet-Dengan-YOLO-11.git)
+    cd Deteksi-Helmet-Dengan-YOLO-11
+    ```
 
-python yolo_detect.py --model my_model.pt --source cctv.mp4
+2.  **Anaconda & PyTorch:**
 
-python yolo_detect.py --model my_model.pt --source test_1.jpg
----
+    * [Install Anaconda](https://repo.anaconda.com/archive/Anaconda3-2024.10-1-Windows-x86_64.exe)
+    * Anaconda Prompt:
 
+        ```bash
+        conda create --name yolo-env1 python=3.12
+        conda activate yolo-env1
+        cd /PATH/direktori/my_model
+        pip3 install --upgrade torch torchvision torchaudio --index-url [https://download.pytorch.org/whl/cu124](https://download.pytorch.org/whl/cu124)
+        ```
+
+3.  **Jalankan Deteksi:**
+
+    * Kamera:
+
+        ```bash
+        python yolo_detect.py --model my_model.pt --source usb0 --resolution 1280x720
+        ```
+
+    * Video:
+
+        ```bash
+        python yolo_detect.py --model my_model.pt --source cctv.mp4
+        ```
+
+    * Gambar:
+
+        ```bash
+        python yolo_detect.py --model my_model.pt --source test_1.jpg
+        ```
+
+### Penjelasan:
+
+* `--model`: Path model YOLOv11.
+* `--source`: Input (kamera, video, gambar).
+* `--resolution`: Resolusi input.
+
+### Catatan:
+
+* Pastikan path model & sumber input benar.
+* Driver kamera terinstal.
+* Model terlatih untuk hasil terbaik.
